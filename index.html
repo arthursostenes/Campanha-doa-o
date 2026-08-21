@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campanha Alimente Esperança</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Campanha de doação de alimentos</p>
+        <h1>Campanha Alimente Esperança</h1>
+        <p class="hero-text">Pequenas doações podem transformar o dia de uma família. Cadastre sua contribuição e ajude a levar alimento para quem precisa.</p>
+        <a class="hero-link" href="#cadastros">Começar agora <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="intro" aria-labelledby="objetivo-titulo">
+        <div>
+          <p class="section-label">Nosso objetivo</p>
+          <h2 id="objetivo-titulo">Alimentar esperança, juntos.</h2>
+        </div>
+        <p>Esta página organiza doadores, alimentos e doações em um só lugar. Os dados ficam salvos neste navegador para que o projeto seja simples de demonstrar e usar.</p>
+      </section>
+
+      <section id="cadastros" class="forms-grid" aria-label="Cadastros da campanha">
+        <article class="panel">
+          <div class="panel-heading"><span class="number">01</span><div><p class="section-label">Cadastro</p><h2>Doador</h2></div></div>
+          <form id="doador-form">
+            <label>Nome<input id="nome" type="text" required /></label>
+            <label>Telefone<input id="telefone" type="tel" required /></label>
+            <label>E-mail<input id="email" type="email" required /></label>
+            <label>Endereço<input id="endereco" type="text" required /></label>
+            <button type="submit">Cadastrar doador</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading"><span class="number">02</span><div><p class="section-label">Cadastro</p><h2>Alimento</h2></div></div>
+          <form id="alimento-form">
+            <label>Nome do alimento<input id="alimento-nome" type="text" placeholder="Ex.: Arroz" required /></label>
+            <div class="two-columns">
+              <label>Quantidade<input id="quantidade" type="number" min="1" required /></label>
+              <label>Unidade<select id="unidade" required><option value="">Escolha</option><option>kg</option><option>unidade</option><option>litro</option><option>cesta</option></select></label>
+            </div>
+            <button type="submit">Cadastrar alimento</button>
+          </form>
+        </article>
+
+        <article class="panel panel-wide">
+          <div class="panel-heading"><span class="number">03</span><div><p class="section-label">Registro</p><h2>Nova doação</h2></div></div>
+          <form id="doacao-form">
+            <div class="two-columns">
+              <label>Doador<select id="doador-id" required><option value="">Cadastre um doador primeiro</option></select></label>
+              <label>Alimento<select id="alimento-id" required><option value="">Cadastre um alimento primeiro</option></select></label>
+            </div>
+            <div class="two-columns">
+              <label>Data<input id="data" type="date" required /></label>
+              <label>Quantidade doada<input id="doacao-quantidade" type="number" min="1" required /></label>
+            </div>
+            <button type="submit">Registrar doação</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="donations" aria-labelledby="doacoes-titulo">
+        <div class="section-header"><div><p class="section-label">Acompanhe</p><h2 id="doacoes-titulo">Doações cadastradas</h2></div><strong id="total-doacoes">0 doações</strong></div>
+        <div id="doacoes-lista" class="donation-list"><p class="empty-state">Ainda não há doações registradas.</p></div>
+      </section>
+    </main>
+
+    <footer><div class="container">Alimente Esperança <span>·</span> uma campanha feita para cuidar</div></footer>
+    <div id="mensagem" class="message" role="status" aria-live="polite"></div>
+    <script src="js/models.js"></script>
+    <script src="js/repository.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
+</html>

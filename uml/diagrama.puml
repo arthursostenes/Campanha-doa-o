@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Doador {
+  +id
+  +nome
+  +email
+  +telefone
+}
+
+class Endereco {
+  +id
+  +rua
+  +numero
+  +bairro
+  +cidade
+  +estado
+  +cep
+}
+
+class Alimento {
+  +id
+  +nome
+  +categoria
+  +quantidade
+  +unidade
+}
+
+class Doacao {
+  +id
+  +doadorId
+  +alimentoId
+  +enderecoId
+  +quantidade
+  +data
+  +status
+}
+
+Doador --> Endereco : possui
+Doador --> Doacao : realiza
+Alimento --> Doacao : participa
+Endereco --> Doacao : destino
+@enduml
